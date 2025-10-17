@@ -20,7 +20,7 @@ class InputCheckerAgent:
 
         lc_messages = convert_openai_messages(prompt)
 
-        response = ChatOpenAI(openai_api_key='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',model='gpt-4-0125-preview', max_retries=3).invoke(lc_messages).content
+        response = ChatOpenAI(openai_api_key='your_key',model='gpt-4-0125-preview', max_retries=3).invoke(lc_messages).content
         print(response)
         return response
     
