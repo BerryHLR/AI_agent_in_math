@@ -19,39 +19,39 @@ from sklearn.tree import DecisionTreeClassifier
 from sklearn.metrics import accuracy_score, classification_report
 import matplotlib.pyplot as plt
 from sklearn import tree
-plt.rcParams['font.sans-serif'] = ['SimHei'] # 设置字体为黑体
+plt.rcParams['font.sans-serif'] = ['SimHei'] # Set font to SimHei (Chinese font)
 
-# 示例数据
+# Sample data
 data = {
-    '员工编号': [1, 2, 3, 4, 5, 6, 7, 8],
-    '培训前绩效评分': [70, 60, 80, 90, 75, 65, 85, 95],
-    '培训参与度': [80, 70, 90, 85, 75, 60, 95, 80],
-    '培训时长': [10, 12, 15, 18, 14, 11, 16, 20],
-    '培训后绩效评分': [80, 65, 90, 95, 80, 70, 95, 100],
-    '员工满意度': [4, 3, 5, 4, 3, 2, 5, 4],
-    '工作经验': [5, 3, 7, 10, 6, 4, 8, 12]
+    'Employee ID': [1, 2, 3, 4, 5, 6, 7, 8],
+    'Pre-training Performance Score': [70, 60, 80, 90, 75, 65, 85, 95],
+    'Training Participation': [80, 70, 90, 85, 75, 60, 95, 80],
+    'Training Duration': [10, 12, 15, 18, 14, 11, 16, 20],
+    'Post-training Performance Score': [80, 65, 90, 95, 80, 70, 95, 100],
+    'Employee Satisfaction': [4, 3, 5, 4, 3, 2, 5, 4],
+    'Work Experience': [5, 3, 7, 10, 6, 4, 8, 12]
 }
 
 df = pd.DataFrame(data)
-df['培训效果'] = df['培训后绩效评分'] > df['培训前绩效评分']  # 1 表示提升，0 表示未提升
+df['Training Effect'] = df['Post-training Performance Score'] > df['Pre-training Performance Score']  # 1 means improved, 0 means not improved
 
-# 划分特征和目标变量
-X = df[['培训前绩效评分', '培训参与度', '培训时长', '员工满意度', '工作经验']]
-y = df['培训效果']
+# Split features and target variable
+X = df[['Pre-training Performance Score', 'Training Participation', 'Training Duration', 'Employee Satisfaction', 'Work Experience']]
+y = df['Training Effect']
 
-# 划分训练集和测试集
+# Split training and test sets
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
 
-# 创建决策树模型
+# Create decision tree model
 clf = DecisionTreeClassifier(criterion='entropy', random_state=42)
 clf.fit(X_train, y_train)
 
-# 预测和评估
+# Predict and evaluate
 y_pred = clf.predict(X_test)
-print("模型准确率:", accuracy_score(y_test, y_pred))
-print("分类报告:\n", classification_report(y_test, y_pred))
+print("Model Accuracy:", accuracy_score(y_test, y_pred))
+print("Classification Report:\n", classification_report(y_test, y_pred))
 
-
+# Plot decision tree
 plt.figure(figsize=(12, 8))
-tree.plot_tree(clf, feature_names=X.columns.tolist(), class_names=['未提升', '提升'], filled=True)
+tree.plot_tree(clf, feature_names=X.columns.tolist(), class_names=['Not Improved', 'Improved'], filled=True)
 plt.show()
