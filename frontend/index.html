@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Learning Assistant</title>
+    <link rel="stylesheet" href="static/styles.css">
+    <link rel="icon" type="image/x-icon" href="static/icon.jpg">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <h1>Bauhinia AI Edu Agents</h1>
+            </div>
+            <p class="powered-by">Powered by <a href="https://bauhiniaai.com/en/index.html" target="_blank">Bauhinia AI</a></p>
+            <p class = "topics-interest">Type Maths Problems and get your personalized Learning Experience.</p>
+
+        </header>
+
+        <section class="topic-selection">
+            <form id="topicForm">
+                <div class="form-group" id="topicGroup1">
+                    <input class = "inputText" type="text" id="topic1" name="topic1" required>
+                    <span class="icon add-topic">---</span>
+                    <span class="icon remove-topic">-</span>
+                </div>
+            </form>
+    <!-- <p class = "layout">Select newspaper layout</p>
+    <div class="layouts">
+        <img src="static/layout_icons/layout_1.png" alt="Layout 1" class="layout-icon" data-layout="layout_1.html">
+        <img src="static/layout_icons/layout_2.png" alt="Layout 2" class="layout-icon" data-layout="layout_2.html">
+        <img src="static/layout_icons/layout_3.png" alt="Layout 3" class="layout-icon" data-layout="layout_3.html">
+    </div> -->
+
+            <button type="button" id="produceNewspaper">Produce</button>
+
+
+        </section>
+
+        <section id="loading" class="hidden">
+                <div class="spinner"></div>
+                <div id="loadingMessages"></div>
+        </section>
+
+
+
+        <section id="newspaper" class="hidden">
+            <!-- The newspaper articles will be populated here -->
+        </section>
+    </div>
+
+    <script src="static/scripts.js"></script>
+</body>
+</html>
