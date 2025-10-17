@@ -16,7 +16,7 @@ base_prompt = hub.pull("langchain-ai/react-agent-template")
 prompt = base_prompt.partial(instructions=instructions)
 class ComputationAgent:
     def __init__(self):
-        self.llm = ChatOpenAI(openai_api_key='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',model='gpt-4-0125-preview', max_retries=3)
+        self.llm = ChatOpenAI(openai_api_key='your_key',model='gpt-4-0125-preview', max_retries=3)
         self.tools = [PythonREPLTool()]
         self.agent = create_react_agent(self.llm, self.tools, prompt)
         self.agent_executor = AgentExecutor(agent=self.agent, tools=self.tools, verbose=False)
