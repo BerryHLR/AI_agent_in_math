@@ -79,6 +79,7 @@ python app.py
 
 
 ## Project structure
+```
 AI_agent_in_math
 ├─ app.py
 ├─ backend
@@ -159,7 +160,7 @@ AI_agent_in_math
       │  └─ layout_3.png
       ├─ scripts.js
       └─ styles.css
-
+```
 
 
 ## How the agent works
