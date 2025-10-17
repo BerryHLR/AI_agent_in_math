@@ -1,9 +1,3 @@
-GitHub Copilot Chat Assistant:
-
-I cannot push files directly from here. Below is a ready-to-use README.md you can paste into the repository root. I also included exact git commands to create/commit/push the file (or create a branch & PR). Paste the README content into README.md and run the commands shown after the file.
-
-README.md content:
----
 # AI Agent in Math
 
 A lightweight Python project demonstrating an AI agent designed to help solve, explain, and reason about mathematics problems. The repo includes the agent logic, a small web UI demo, and example scripts for experimentation.
@@ -17,11 +11,7 @@ A lightweight Python project demonstrating an AI agent designed to help solve, e
   - [Install dependencies](#install-dependencies)  
   - [Run examples](#run-examples)  
 - [Project structure](#project-structure)  
-- [How the agent works (high level)](#how-the-agent-works-high-level)  
-- [Configuration & models](#configuration--models)  
-- [Development](#development)  
-- [Testing](#testing)  
-- [Contributing](#contributing)   
+- [How the agent works](#how-the-agent-works)    
 - [Acknowledgements & references](#acknowledgements--references)  
 - [Contact](#contact)
 
@@ -199,7 +189,3 @@ The following table outlines the different roles and corresponding jobs of the a
 
 ## Contact
 Repository owner: @BerryHLR
-
-
-1) Provide the README as a downloadable patch file content, or  
-2) Walk you through creating a branch and opening a PR step-by-step?
